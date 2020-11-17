@@ -1,15 +1,15 @@
 const Pool = require('pg').Pool
 const pool = new Pool({
- host: 'ec2-54-246-115-40.eu-west-1.compute.amazonaws.com',
-  database: 'd39p1s370btatt',
-  user:'aoiukhjcvyhqnf',
-  password: '0148a73fd0da09373b1183ffb94504b6763562b37417a709cc8daeba69f4e55b',
+ host: 'ec2-54-217-213-79.eu-west-1.compute.amazonaws.com',
+  database: 'delpcnre7qqvcd',
+  user:'vzlulqlbbidpeh',
+  password: 'af82c78ad889cad3286d51a758515f36c0eeba2569a9141dc6a8b62b7e8f951f',
   port: 5432,
   ssl:{rejectUnauthorized:false},
 })
 const getUsers = (request, response) => {
     response.header("Access-Control-Allow-Origin", "*");
-    pool.query('SELECT * FROM public.users ORDER BY id ASC', (error, results) => {
+    pool.query('SELECT * FROM public.swiper ORDER BY id ASC', (error, results) => {
     if (error) {
       throw error
     }
@@ -20,7 +20,7 @@ const getUsers = (request, response) => {
 const getUserById = (request, response) => {
   const id = parseInt(request.params.id)
     response.header("Access-Control-Allow-Origin", "*");
-    pool.query('SELECT * FROM public.users WHERE id = $1', [id], (error, results) => {
+    pool.query('SELECT * FROM public.swiper WHERE id = $1', [id], (error, results) => {
     if (error) {
       throw error
     }

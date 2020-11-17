@@ -12,8 +12,8 @@ app.use(
   })
   );
   
-app.get('/users', db.getUsers)
-app.get('/users/:id', db.getUserById)
+app.get('/swiper', db.getUsers)
+app.get('/swiper/:id', db.getUserById)
 app.use(express.static("CourseWork"));
 
 app.listen(port, () => {
