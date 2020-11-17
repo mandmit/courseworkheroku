@@ -30,7 +30,7 @@ let start = {
     Imag5: Imag5.src,
     Abouttxt5: Abouttxt5.innerText
 };
-{
+{const json =  (JSON.parse(response.responseText))[0];
     $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+1,function(response){
         const json =  (JSON.parse(response.responseText))[0];
         Header1.innerText = json.header;
@@ -38,25 +38,25 @@ let start = {
         Imag1.src = json.image;
         });
     $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+2,function(response){
-        const json =  (JSON.parse(response.responseText))[0];
+        const json =  (JSON.parse(response.responseText))[1];
         Header2.innerText = json.header;
         Abouttxt2.innerText = json.text;
         Imag2.src = json.image;
         });
     $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+3,function(response){
-        const json =  (JSON.parse(response.responseText))[0];
+        const json =  (JSON.parse(response.responseText))[2];
         Header3.innerText = json.header;
         Abouttxt3.innerText = json.text;
         Imag3.src = json.image;
         });
     $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+4,function(response){
-        const json =  (JSON.parse(response.responseText))[0];
+        const json =  (JSON.parse(response.responseText))[3];
         Header4.innerText = json.header;
         Abouttxt4.innerText = json.text;
         Img4.src = json.image;
         });
     $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+5,function(response){
-        const json =  (JSON.parse(response.responseText))[0];
+        const json =  (JSON.parse(response.responseText))[4];
         Header5.innerText = json.header;
         Abouttxt5.innerText = json.text;
         });
