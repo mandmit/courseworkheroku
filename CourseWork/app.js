@@ -35,11 +35,10 @@ let start = {
 function StartSwiper(){
         if(num === 1){
     $ajaxUtils.sendGetRequest(`https://courseapplicati0n.herokuapp.com/swiper/${num}`,function(response){
-//        const json =  (JSON.parse(response.responseText))[0];
-//        Header1.innerText = json.header;
-//        Abouttxt1.innerText = json.text;
-//        Imag1.src = json.image;
-          console.log(response);
+        const json =  (JSON.parse(response.responseText))[0];
+        Header1.innerText = json.header;
+        Abouttxt1.innerText = json.text;
+        Imag1.src = json.image;
         });
         num++;
     }
