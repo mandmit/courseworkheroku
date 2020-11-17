@@ -40,6 +40,7 @@ function(){
         Abouttxt1.innerText = json.text;
         Imag1.src = json.image;
         });
+        num++;
     }
         if(num === 2){
     $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+num,function(response){
@@ -48,6 +49,7 @@ function(){
         Abouttxt2.innerText = json.text;
         Imag2.src = json.image;
         });
+        num++;
     }
         if(num === 3){
     $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+num,function(response){
@@ -56,6 +58,7 @@ function(){
         Abouttxt3.innerText = json.text;
         Imag3.src = json.image;
         });
+        num++;
     }
         if(num === 4){
     $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+num,function(response){
@@ -64,6 +67,7 @@ function(){
         Abouttxt4.innerText = json.text;
         Imag4.src = json.image;
         });
+        num++;
     }
         if(num ===5){
     $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+num,function(response){
@@ -71,6 +75,7 @@ function(){
         Header5.innerText = json.header;
         Abouttxt5.innerText = json.text;
         });
+        num++;
     }
     }};
 };
