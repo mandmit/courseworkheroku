@@ -1,81 +1,65 @@
 /* global $ajaxUtils */
 
-const Head = document.getElementById("head");
-const Header1 = document.getElementById("header1");
-const Imag1 = document.getElementById("im1");
-const Abouttxt1 = document.getElementById("text1");
-const Header2 = document.getElementById("header2");
-const Imag2 = document.getElementById("im2");
-const Abouttxt2 = document.getElementById("text2");
-const Header3 = document.getElementById("header3");
-const Imag3 = document.getElementById("im3");
-const Abouttxt3 = document.getElementById("text3");
-const Header4 = document.getElementById("header4");
-const Imag4 = document.getElementById("im4");
-const Abouttxt4 = document.getElementById("text4");
-const Header5 = document.getElementById("header5");
-const Abouttxt5 = document.getElementById("text5");
-let num = 0;
-let start = {
-    Header1: Header1.innerText,
-    Imag1: Imag1.src,
-    Abouttxt1: Abouttxt1.innerText,
-    Header2: Header2.innerText,
-    Imag2: Imag2.src,
-    Abouttxt2: Abouttxt2.innerText,
-    Header3: Header3.innerText,
-    Imag3: Imag3.src,
-    Abouttxt3: Abouttxt3.innerText,
-    Header4: Header4.innerText,
-    Imag4: Imag4.src,
-    Abouttxt4: Abouttxt4.innerText,
-    Header5: Header5.innerText,
-    Abouttxt5: Abouttxt5.innerText
-};
-function StartSwiper(){
-        if(num === 1){
-    $ajaxUtils.sendGetRequest(`https://courseapplicati0n.herokuapp.com/swiper/${num}`,function(response){
-        const json =  (JSON.parse(response.responseText))[0];
-        Header1.innerText = json.header;
-        Abouttxt1.innerText = json.text;
-        Imag1.src = json.image;
-        });
-        num++;
+
+const header1 = document.querySelector('#header1'),
+      image1 = document.querySelector('#im1'),
+      description1 = document.querySelector('#text1'),
+      header2 = document.querySelector('#header2'),
+      image2 = document.querySelector('#im2'),
+      description2 = document.querySelector('#text2'),
+      header3 = document.querySelector('#header3'),
+      image3 = document.querySelector('#im3'),
+      description3 = document.querySelector('#text3'),
+      header4 = document.querySelector('#header4'),
+      image4 = document.querySelector('#im4'),
+      description4 = document.querySelector('#text4'),
+      header5 = document.querySelector('#header5'),
+      description5 = document.querySelector('#text5');
+
+function getDataFromHeroku() {
+    for(let num = 1; num <=5; num++){
+    const request = new XMLHttpRequest()
+    
+    request.open('get', 'https://courseapplicati0n.herokuapp.com/swiper/'+num)
+
+    try {
+
+        request.onload = () => {
+            const json = JSON.parse(request.responseText)
+            
+            if(num === 1){
+            header1.innerText = json[0].header,
+            description1.innerText = json[0].text,
+            image1.src = json[0].image;
+            }
+            if(num === 2){
+            header2.innerText = json[0].header,
+            description2.innerText = json[0].text,
+            image2.src = json[0].image;
+            }
+            if(num === 3){
+            header3.innerText = json[0].header,
+            description3.innerText = json[0].text,
+            image3.src = json[0].image;
+            }
+            if(num === 4){
+            header4.innerText = json[0].header,
+            description4.innerText = json[0].text,
+            image4.src = json[0].image;
+            }
+            if(num === 5){
+            header5.innerText = json[0].header,
+            description5.innerText = json[0].text;
+            }
+        }
+
+    } catch(e) {
+        console.warn(e) 
     }
-//        if(num === 2){
-//    $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+num,function(response){
-//        const json =  (JSON.parse(response.responseText))[0];
-//        Header2.innerText = json.header;
-//        Abouttxt2.innerText = json.text;
-//        Imag2.src = json.image;
-//        });
-//        num++;
-//    }
-//        if(num === 3){
-//    $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+num,function(response){
-//        const json =  (JSON.parse(response.responseText))[0];
-//        Header3.innerText = json.header;
-//        Abouttxt3.innerText = json.text;
-//        Imag3.src = json.image;
-//        });
-//        num++;
-//    }
-//        if(num === 4){
-//    $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+num,function(response){
-//        const json =  (JSON.parse(response.responseText))[0];
-//        Header4.innerText = json.header;
-//        Abouttxt4.innerText = json.text;
-//        Imag4.src = json.image;
-//        });
-//        num++;
-//    }
-//        else(num ===5){
-//    $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+num,function(response){
-//        const json =  (JSON.parse(response.responseText))[0];
-//        Header5.innerText = json.header;
-//        Abouttxt5.innerText = json.text;
-//        });
-//        num++;
-//    }
-};
-StartSwiper();
+
+
+    request.send()
+    }
+}
+
+getDataFromHeroku()
