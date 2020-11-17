@@ -1,5 +1,6 @@
 /* global $ajaxUtils */
 
+const Head = document.getElementById("head");
 const Header1 = document.getElementById("header1");
 const Imag1 = document.getElementById("im1");
 const Abouttxt1 = document.getElementById("text1");
@@ -31,8 +32,7 @@ let start = {
     Header5: Header5.innerText,
     Abouttxt5: Abouttxt5.innerText
 };
-function(){
-    while(num<=5){
+Head.onclick = function(){
         if(num === 1){
     $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+num,function(response){
         const json =  (JSON.parse(response.responseText))[0];
@@ -77,5 +77,5 @@ function(){
         });
         num++;
     }
-    }};
+    };
 };
