@@ -69,7 +69,7 @@ function(){
         });
         num++;
     }
-        if(num ===5){
+        else(num ===5){
     $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+num,function(response){
         const json =  (JSON.parse(response.responseText))[0];
         Header5.innerText = json.header;
