@@ -32,7 +32,7 @@ let start = {
     Header5: Header5.innerText,
     Abouttxt5: Abouttxt5.innerText
 };
-Head.onclick = function(){
+function StartSwiper(){
         if(num === 1){
     $ajaxUtils.sendGetRequest("https://courseapplicati0n.herokuapp.com/swiper/"+num,function(response){
         const json =  (JSON.parse(response.responseText))[0];
@@ -79,3 +79,4 @@ Head.onclick = function(){
     }
     };
 };
+StartSwiper();
