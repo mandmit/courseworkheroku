@@ -1,6 +1,3 @@
-/* global $ajaxUtils */
-
-
 const header1 = document.querySelector('#header1'),
       image1 = document.querySelector('#im1'),
       description1 = document.querySelector('#text1'),
@@ -18,14 +15,14 @@ const header1 = document.querySelector('#header1'),
 
 function getDataFromHeroku() {
     for(let num = 1; num <=5; num++){
-    const request = new XMLHttpRequest()
+    const request = new XMLHttpRequest();
     
-    request.open('get', 'https://courseapplicati0n.herokuapp.com/swiper/'+num)
+    request.open('get', 'https://courseapplicati0n.herokuapp.com/swiper/'+num);
 
     try {
 
         request.onload = () => {
-            const json = JSON.parse(request.responseText)
+            const json = JSON.parse(request.responseText);
             
             if(num === 1){
             header1.innerText = json[0].header,
@@ -51,15 +48,15 @@ function getDataFromHeroku() {
             header5.innerText = json[0].header,
             description5.innerText = json[0].text;
             }
-        }
+        };
 
     } catch(e) {
-        console.warn(e) 
+        console.warn(e) ;
     }
 
 
-    request.send()
+    request.send();
     }
 }
 
-getDataFromHeroku()
+getDataFromHeroku();
