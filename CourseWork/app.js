@@ -11,6 +11,7 @@ const header1 = document.querySelector('#header1'),
       image4 = document.querySelector('#im4'),
       description4 = document.querySelector('#text4'),
       header5 = document.querySelector('#header5'),
+      image5 = document.querySelector('#im5'),
       description5 = document.querySelector('#text5');
 
 function getDataFromHeroku() {
@@ -46,7 +47,8 @@ function getDataFromHeroku() {
             }
             if(num === 5){
             header5.innerText = json[0].header,
-            description5.innerText = json[0].text;
+            description5.innerText = json[0].text,
+            image5.src = json[0].image;
             }
         };
 
