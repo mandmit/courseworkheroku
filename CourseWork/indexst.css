@@ -86,6 +86,11 @@ ul {
     color: blue;
 }
 
+.hovr a {
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
 
 .hovr a:hover {
     background-color: lightgreen;

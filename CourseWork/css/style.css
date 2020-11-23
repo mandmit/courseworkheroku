@@ -37,12 +37,25 @@ body {
     color: black;
 }
 
+.smal-block1,
+.smal-block2 {
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+}
+
 .smal-block1:hover,
 .smal-block2:hover {
     background-color: grey;
     -webkit-transition: 0.7s;
     transition: 0.7s;
 }
+
+.stores a,
+.genre a {
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+}
+
 
 .stores a:hover,
 .genre a:hover {
@@ -141,6 +154,13 @@ span {
     border-radius: 20px;
     left: 68%;
     width: 300px;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+}
+
+.tovar {
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
 }
 
 .tovar:hover {
@@ -175,11 +195,8 @@ span {
 
 .item {
     height: 350px;
-
     flex: 20%;
-
     transition: flex 300ms ease;
-
     box-shadow: 0 0 19px 3px #000;
     margin: 1px;
 }
