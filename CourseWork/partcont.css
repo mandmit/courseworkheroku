@@ -21,6 +21,8 @@ span {
 .wraper a {
     text-decoration: none;
     color: black;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
 }
 
 .wraper a:hover {
@@ -30,14 +32,16 @@ span {
 }
 
 .fd {
-    width: 40%;
+    width: 55%;
     margin: auto;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
 }
 
 .fd:hover {
     border-radius: 20px;
     color: white;
-    background-color: rgb(99, 70, 50);
+    background-color: gray;
     -webkit-transition: 0.7s;
     transition: 0.7s;
 }

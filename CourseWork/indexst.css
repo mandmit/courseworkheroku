@@ -159,6 +159,12 @@ li {
     flex-direction: column;
 }
 
+.news-col a{
+    border: 1px solid grey;
+    width: 40%;
+    margin: auto;
+}
+
 .img-slider,
 .video-slider {
     width: 80%;
